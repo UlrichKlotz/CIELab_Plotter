@@ -1,4 +1,4 @@
-# CIELab a*–b* Plotter
+# CIELab–sRGB Gamut Plotter
 ![DOI](https://zenodo.org/badge/1374238010.svg)
 
 A desktop tool to plot experimental CIELab colour-measurement data on top of
