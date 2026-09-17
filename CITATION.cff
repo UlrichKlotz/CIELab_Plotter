@@ -17,7 +17,7 @@ license: GPL-3.0-or-later
 version: "1.0.0"                                        
 date-released: "2026-09-17"                             
 # repository-code: "https://github.com/UlrichKlotz/CIELab_Plotter"  
-# doi: "10.5281/zenodo.XXXXXXX"                         # ← nach Zenodo-Verknüpfung eintragen
+# doi: "10.5281/zenodo.22811675"
 keywords:
   - CIELab
   - colour science
