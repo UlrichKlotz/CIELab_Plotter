@@ -55,6 +55,7 @@ Cu			Cu	87.2	13.4	14.9	[9]
 ```
 Additional columns with references can be added. You find selected example data in a csv. file. 
 The software accepts tab-, comma- or semicolon-separated files.
+
 References:
 [1]	U.E. Klotz, Metallurgy and processing of coloured gold intermetallics — Part I: Properties and surface processing, Gold Bulletin 43 (2010) 4–10. https://doi.org/10.1007/BF0321496
 [6]	S. Henderson, D. Manchanda, White gold alloys:, Gold Bull 38 (2005) 55–67. https://doi.org/10.1007/BF03215234.
