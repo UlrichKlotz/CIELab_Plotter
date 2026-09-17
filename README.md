@@ -73,7 +73,7 @@ citation is available via the “Cite this repository” button on GitHub
   title   = {CIELab a*--b* Plotter},
   year    = {2026},
   version = {1.0.0},
-  doi     = {10.5281/zenodo.XXXXXXX},
+  doi     = {10.5281/zenodo.2281167},
   url     = {https://github.com/UlrichKlotz/CIELab_Plotter}
 }
 ```
