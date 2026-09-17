@@ -73,7 +73,7 @@ citation is available via the "Cite this repository" button on GitHub
   author  = {Klotz, Ulrich E.},
   title   = {CIELab_Plotter},
   year    = {2026},
-  version = {1.0.1},
+  version = {1.0.2},
   doi     = {10.5281/zenodo.22811675},
   url     = {https://github.com/UlrichKlotz/CIELab_Plotter}
 }
