@@ -55,6 +55,12 @@ Cu			Cu	87.2	13.4	14.9	[9]
 ```
 Additional columns with references can be added. You find selected example data in a csv. file. 
 The software accepts tab-, comma- or semicolon-separated files.
+References	
+[1]	U.E. Klotz, Metallurgy and processing of coloured gold intermetallics — Part I: Properties and surface processing, Gold Bulletin 43 (2010) 4–10. https://doi.org/10.1007/BF03214961
+[6]	S. Henderson, D. Manchanda, White gold alloys:, Gold Bull 38 (2005) 55–67. https://doi.org/10.1007/BF03215234.
+[8]	DIN EN ISO 8654:2020-05, Schmuck_- Farben von Goldlegierungen_- Bezeichnung, Farbenreihe und Kennzeichnung (ISO_8654:2018_+ Amd_1:2019); Deutsche Fassung EN_ISO_8654:2018_+ A1:2019, (n.d.). https://doi.org/10.31030/3136633.
+[9]	C. Leygraf, T. Chang, G. Herting, I. Odnevall Wallinder, The origin and evolution of copper patina colour, Corrosion Science 157 (2019) 337–346. https://doi.org/10.1016/j.corsci.2019.05.025.
+
 Citation
 If you use this software, please cite it. A ready-to-use
 citation is available via the “Cite this repository” button on GitHub
@@ -71,12 +77,14 @@ citation is available via the “Cite this repository” button on GitHub
   url     = {https://github.com/UlrichKlotz/CIELab_Plotter}
 }
 ```
+
 License
 This project is licensed under the GNU General Public License v3.0 or later
 (GPL-3.0-or-later). See the `LICENSE` file for the full text.
 You are free to use, study, modify and redistribute this software, provided that
 derivative works remain under the GPL and preserve the original copyright and
 author attribution.
+
 Author
 Prof. Dr. Ulrich E. Klotz
 Faculty of Applied Sciences and Mechatronics
