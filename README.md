@@ -88,8 +88,7 @@ author attribution.
 
 # Author
 © 2026 Prof. Dr. Ulrich E. Klotz,
-Faculty of Applied Sciences and Mechatronics,
-Hochschule München University of Applied Sciences
+Department of Applied Sciences and Mechatronics, HM Munich University of Applied Sciences, Lothstrasse 34, Munich 80335, Germany
 
 ## Development note
 
