@@ -36,7 +36,7 @@ sudo apt install python3-tk
 # Usage
 Run the script:
 ```bash
-python ColourPlot-browser3.py
+python CIELab_Plotter.py
 ```
 Then:
 Paste your measurement table into the data box (or use From file).
@@ -56,14 +56,14 @@ Cu			Cu	87.2	13.4	14.9	[9]
 Additional columns with references can be added. You find selected example data in a csv. file. 
 The software accepts tab-, comma- or semicolon-separated files.
 References	
-[1]	U.E. Klotz, Metallurgy and processing of coloured gold intermetallics — Part I: Properties and surface processing, Gold Bulletin 43 (2010) 4–10. https://doi.org/10.1007/BF03214961
+[1]	U.E. Klotz, Metallurgy and processing of coloured gold intermetallics — Part I: Properties and surface processing, Gold Bulletin 43 (2010) 4–10. https://doi.org/10.1007/BF0321496
 [6]	S. Henderson, D. Manchanda, White gold alloys:, Gold Bull 38 (2005) 55–67. https://doi.org/10.1007/BF03215234.
 [8]	DIN EN ISO 8654:2020-05, Schmuck_- Farben von Goldlegierungen_- Bezeichnung, Farbenreihe und Kennzeichnung (ISO_8654:2018_+ Amd_1:2019); Deutsche Fassung EN_ISO_8654:2018_+ A1:2019, (n.d.). https://doi.org/10.31030/3136633.
 [9]	C. Leygraf, T. Chang, G. Herting, I. Odnevall Wallinder, The origin and evolution of copper patina colour, Corrosion Science 157 (2019) 337–346. https://doi.org/10.1016/j.corsci.2019.05.025.
 
 # Citation
-If you use this software, please cite it. A ready-to-use
-citation is available via the “Cite this repository” button on GitHub
+If you use this software, please cite it as [![DOI](https://zenodo.org/badge/1374238010.svg)](https://doi.org/10.5281/zenodo.22811675).
+A ready-to-use citation is available via the “Cite this repository” button on GitHub
 (generated from `CITATION.cff`).
 <!-- After connecting the repository to Zenodo, add your DOI badge and details: -->
 <!-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
@@ -73,7 +73,7 @@ citation is available via the “Cite this repository” button on GitHub
   title   = {CIELab a*--b* Plotter},
   year    = {2026},
   version = {1.0.0},
-  doi     = {10.5281/zenodo.2281167},
+  doi     = {10.5281/zenodo.22811675},
   url     = {https://github.com/UlrichKlotz/CIELab_Plotter}
 }
 ```
