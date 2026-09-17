@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "CIELab a*–b* Plotter"
+abstract: >-
+  A desktop tool to plot experimental CIELab colour-measurement data on top of
+  the true sRGB colour gamut at a chosen lightness L*. Each unique composition
+  automatically receives its own colour and marker, and publication-ready
+  figures can be exported.
+type: software
+authors:
+  - family-names: "Klotz"
+    given-names: "Ulrich E."
+    name-prefix: "Prof. Dr."
+    affiliation: "Hochschule München University of Applied Sciences"
+    # orcid: "https://orcid.org/0000-0002-6033-1659"   
+license: GPL-3.0-or-later
+version: "1.0.0"                                        
+date-released: "2026-09-17"                             
+# repository-code: "https://github.com/UlrichKlotz/CIELab_Plotter"  
+# doi: "10.5281/zenodo.XXXXXXX"                         # ← nach Zenodo-Verknüpfung eintragen
+keywords:
+  - CIELab
+  - colour science
+  - sRGB gamut
+  - colour measurement
+  - materials science
+  - coloured gold
+  - intermetallics
+  - precious metals
+  - jewelry
+  - jewellery
+  - platinum
+  - data visualization
