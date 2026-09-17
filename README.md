@@ -91,3 +91,5 @@ Prof. Dr. Ulrich E. Klotz
 Faculty of Applied Sciences and Mechatronics
 Hochschule München University of Applied Sciences
 © 2026
+
+This code was created with the support of Claude (Anthropic), based on the author’s specifications and instructions.
