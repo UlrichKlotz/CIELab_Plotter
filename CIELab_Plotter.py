@@ -1,14 +1,30 @@
 """
-CIELab a*–b* Plotter
-====================
-A desktop tool to plot experimental CIELab colour-measurement data on top of the
-true sRGB colour gamut at a chosen lightness L*.
+CIELab_Plotter
+==================== """
+
+"""CIELab a*–b* Plotter — plot experimental CIELab colour-measurement data
+on the true sRGB colour gamut at a chosen lightness L*.
+Copyright (C) 2026  Ulrich E. Klotz,
+Hochschule München University of Applied Sciences
+
+Cite this software (all versions): https://doi.org/10.5281/zenodo.22811675
+ 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+ 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+ 
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Run in PyCharm (green ▶) or:   python cielab.py
-
 Requirements (install once in PyCharm's terminal):
     pip install matplotlib numpy
-
 tkinter ships with standard Python on Windows/macOS.
 On Linux:  sudo apt install python3-tk
 
@@ -28,24 +44,6 @@ Workflow
 4. Save PNG  →  clean white publication-style figure for slides/papers.
    Save / Load Session  →  keep working later.
 """
-
-"""CIELab a*–b* Plotter — plot experimental CIELab colour-measurement data
-on the true sRGB colour gamut at a chosen lightness L*.
-Copyright (C) 2026  Ulrich E. Klotz,
-Hochschule München University of Applied Sciences
- 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
- 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
- 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>."""
 
 import tkinter as tk
 from tkinter import ttk, colorchooser, filedialog, messagebox
@@ -192,9 +190,9 @@ class CIELabPlotter:
     # ── demo data so the window isn't empty on first launch ─────────────
     def _load_demo(self):
         demo = [
-            ("Pt 100",          "Pt",      89.12, -0.13, 0.54),
-            ("Pt 87.8 Al 12.2", "PtAl",    82.93,  1.86, 2.28),
-            ("Pt 83 Al 17",     "Pt2Al3",  78.34, -1.41, 1.93),
+            ("Au 99.99", "Au", 86, 4.7, 36.9),
+            ("Ag 99.99", "Ag", 92.65, -0.31, 5.05),
+            ("Cu 99.99", "Cu", 87.2, 13.4, 14.9),
         ]
         for comp, phase, L, a, b in demo:
             self._ensure_style(comp)
