@@ -87,9 +87,13 @@ derivative works remain under the GPL and preserve the original copyright and
 author attribution.
 
 # Author
-Prof. Dr. Ulrich E. Klotz
-Faculty of Applied Sciences and Mechatronics
+© 2026 Prof. Dr. Ulrich E. Klotz,
+Faculty of Applied Sciences and Mechatronics,
 Hochschule München University of Applied Sciences
-© 2026
 
-This code was created with the support of Claude (Anthropic), based on the author’s specifications and instructions.
+## Development note
+
+Parts of this software were written with the assistance of Claude (Anthropic),
+an AI assistant, based on the specifications and guidance of the author. The
+author designed and directed the work, reviewed the results, and is solely
+responsible for the software and its correctness.
