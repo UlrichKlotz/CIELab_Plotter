@@ -14,7 +14,7 @@ authors:
     affiliation: "Hochschule München University of Applied Sciences"
     orcid: "https://orcid.org/0000-0002-6033-1659"   
 license: GPL-3.0-or-later
-version: "1.0.1"                                        
+version: "1.0.2"                                        
 date-released: "2026-09-17"                             
 repository-code: "https://github.com/UlrichKlotz/CIELab_Plotter"  
 doi: "10.5281/zenodo.22811675"
