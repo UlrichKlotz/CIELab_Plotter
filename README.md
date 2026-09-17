@@ -1,4 +1,4 @@
-CIELab a*–b* Plotter
+# CIELab a*–b* Plotter
 A desktop tool to plot experimental CIELab colour-measurement data on top of
 the true sRGB colour gamut at a chosen lightness L*. Each unique
 composition automatically receives its own colour and marker and appears once in
@@ -15,7 +15,7 @@ The complete colour space at L = 70. The L-value can be defined by a slider.
 ![Screenshot](screenshot_Github3.png)
 A screenshot of the GUI that allows interactive selection and editing of data points and axis ranges.
 
-Features
+# Features
 Interactive a*–b* plot with the sRGB gamut rendered as a live background
 Adjustable background lightness L* and a*/b* axis ranges
 Automatic colour + marker assignment per composition, with a clean legend
@@ -33,7 +33,7 @@ On Linux install it with:
 ```bash
 sudo apt install python3-tk
 ```
-Usage
+# Usage
 Run the script:
 ```bash
 python ColourPlot-browser3.py
@@ -61,7 +61,7 @@ References
 [8]	DIN EN ISO 8654:2020-05, Schmuck_- Farben von Goldlegierungen_- Bezeichnung, Farbenreihe und Kennzeichnung (ISO_8654:2018_+ Amd_1:2019); Deutsche Fassung EN_ISO_8654:2018_+ A1:2019, (n.d.). https://doi.org/10.31030/3136633.
 [9]	C. Leygraf, T. Chang, G. Herting, I. Odnevall Wallinder, The origin and evolution of copper patina colour, Corrosion Science 157 (2019) 337–346. https://doi.org/10.1016/j.corsci.2019.05.025.
 
-Citation
+# Citation
 If you use this software, please cite it. A ready-to-use
 citation is available via the “Cite this repository” button on GitHub
 (generated from `CITATION.cff`).
@@ -78,14 +78,14 @@ citation is available via the “Cite this repository” button on GitHub
 }
 ```
 
-License
+# License
 This project is licensed under the GNU General Public License v3.0 or later
 (GPL-3.0-or-later). See the `LICENSE` file for the full text.
 You are free to use, study, modify and redistribute this software, provided that
 derivative works remain under the GPL and preserve the original copyright and
 author attribution.
 
-Author
+# Author
 Prof. Dr. Ulrich E. Klotz
 Faculty of Applied Sciences and Mechatronics
 Hochschule München University of Applied Sciences
