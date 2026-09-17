@@ -1,8 +1,8 @@
 """
-CIELab_Plotter
+CIELab–sRGB Gamut Plotter
 ==================== """
 
-"""CIELab a*–b* Plotter — plot experimental CIELab colour-measurement data
+"""CIELab–sRGB Gamut Plotter — plot experimental CIELab colour-measurement data
 on the true sRGB colour gamut at a chosen lightness L*.
 Copyright (C) 2026  Ulrich E. Klotz,
 Hochschule München University of Applied Sciences
