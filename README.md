@@ -65,13 +65,17 @@ References:
 - [9] C. Leygraf, T. Chang, G. Herting, I. Odnevall Wallinder, The origin and evolution of copper patina colour, Corrosion Science 157 (2019) 337–346. https://doi.org/10.1016/j.corsci.2019.05.025
 
 # Citation
-If you use this software in academic work, please cite it. A ready-to-use
-citation is available via the "Cite this repository" button on GitHub
+If you use this software in academic work, or a commercial project please cite it. 
+
+Klotz, U.E. (2026). *CIELab–sRGB Gamut Plotter: Color space visualization in Python*. 
+GitHub Repository: https://github.com/UlrichKlotz/CIELab_Plotter. DOI: 10.5281/zenodo.22811675
+
+A ready-to-use citation is available via the "Cite this repository" button on GitHub
 (generated from `CITATION.cff`).
 ```bibtex
 @software{klotz_cielab_plotter,
   author  = {Klotz, Ulrich E.},
-  title   = {CIELab_Plotter},
+  title   = {CIELab–sRGB Gamut Plotter},
   year    = {2026},
   version = {1.0.2},
   doi     = {10.5281/zenodo.22811675},
