@@ -90,6 +90,11 @@ You are free to use, study, modify and redistribute this software, provided that
 derivative works remain under the GPL and preserve the original copyright and
 author attribution.
 
+**Support this project!**  
+If **CIELab–sRGB Gamut Plotter** has been useful for your research, work, or personal projects, please consider supporting it:
+* ⭐ **Star this repository:** Click the "Star" button in the top-right corner to help others discover this tool.
+* 📢 **Share your feedback:** Let me know how you are using the tool by opening an [Issue](https://github.com)
+
 # Author
 © 2026 Prof. Dr. Ulrich E. Klotz,
 Department of Applied Sciences and Mechatronics, HM Munich University of Applied Sciences, Lothstrasse 34, Munich 80335, Germany
