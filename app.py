@@ -20,12 +20,12 @@ from matplotlib.markers import MarkerStyle
 APP_DOI = "10.5281/zenodo.22811675"
 APP_GITHUB = "https://github.com/UlrichKlotz/CIELab_Plotter"
 
-# --- Autor / Zitierung -----------------------------------------------------
-AUTHOR = "Ulrich E. Klotz"
+# --- Author / citation ----------------------------------------------------
+AUTHOR = "Prof. Dr. Ulrich E. Klotz"
 AFFILIATION = "Hochschule München University of Applied Sciences"
 APP_YEAR = 2026
 APP_TITLE_FULL = "CIELab–sRGB Gamut Plotter"
-# Empfohlene Software-Zitierung (bitte Jahr und DOI vor Veröffentlichung prüfen).
+# Recommended software citation (please verify year and DOI before publishing).
 CITATION = (
     f"{AUTHOR} ({APP_YEAR}). {APP_TITLE_FULL} [Computer software]. "
     f"{AFFILIATION}. https://doi.org/{APP_DOI}"
@@ -156,8 +156,8 @@ def parse_data(text):
 
     if not rows:
         raise ValueError(
-            "Keine gültigen Datenzeilen gefunden. "
-            "Erwartet werden mindestens fünf Spalten: "
+            "No valid data rows found. "
+            "At least five columns are expected: "
             "Composition, Phase, L*, a*, b*."
         )
 
@@ -182,7 +182,7 @@ def normalise_dataframe(df):
     required = ["Composition", "Phase", "L*", "a*", "b*"]
     for col in required:
         if col not in df.columns:
-            raise ValueError(f"Spalte '{col}' fehlt.")
+            raise ValueError(f"Column '{col}' is missing.")
 
     for col in ["L*", "a*", "b*"]:
         df[col] = pd.to_numeric(df[col], errors="coerce")
@@ -201,8 +201,8 @@ def normalise_dataframe(df):
     bad = df[["L*", "a*", "b*"]].isna().any(axis=1)
     if bad.any():
         raise ValueError(
-            f"{int(bad.sum())} Datenzeile(n) enthalten ungültige Zahlen "
-            "in L*, a* oder b*."
+            f"{int(bad.sum())} data row(s) contain invalid numbers "
+            "in L*, a* or b*."
         )
 
     df = df[df["Composition"].str.strip() != ""].reset_index(drop=True)
@@ -241,25 +241,25 @@ def add_phase_label(ax, row, label_size):
 
 
 def _add_source_note(fig, ax, legend, export):
-    """Quellen-/DOI-Hinweis direkt unterhalb der Legende platzieren.
+    """Place the source/DOI note directly below the legend.
 
-    Der Text wird auf zwei Zeilen gesetzt, linksbündig mit der Legende
-    ausgerichtet und – falls nötig – so weit verkleinert, dass er nicht
-    breiter als die Legende ist (mit einer lesbaren Mindestgröße).
+    The text is set on two lines, left-aligned with the legend and – if
+    necessary – shrunk until it is no wider than the legend (down to a
+    readable minimum font size).
     """
     note = f"Generated with CIELab Plotter\nDOI: {APP_DOI}"
 
-    # Legende muss gezeichnet sein, bevor ihre Position gemessen werden kann.
+    # The legend must be drawn before its position can be measured.
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     inv = ax.transAxes.inverted()
 
     lbox = legend.get_window_extent(renderer)
-    lx0, ly0 = inv.transform((lbox.x0, lbox.y0))   # untere linke Ecke
-    lx1, _ = inv.transform((lbox.x1, lbox.y1))     # rechte Kante
+    lx0, ly0 = inv.transform((lbox.x0, lbox.y0))   # lower-left corner
+    lx1, _ = inv.transform((lbox.x1, lbox.y1))     # right edge
     legend_width = lx1 - lx0
 
-    gap = 0.015                       # vertikaler Abstand unter der Legende
+    gap = 0.015                       # vertical gap below the legend
     fontsize = 7.5 if export else 7.0
 
     txt = ax.text(
@@ -276,7 +276,7 @@ def _add_source_note(fig, ax, legend, export):
         zorder=6,
     )
 
-    # Schrift verkleinern, bis der Hinweis in die Legendenbreite passt.
+    # Shrink the font until the note fits within the legend width.
     for _ in range(10):
         fig.canvas.draw()
         tbox = txt.get_window_extent(renderer)
@@ -415,10 +415,10 @@ def create_figure(df, L_background, a_min, a_max, b_min, b_max,
     for spine in ax.spines.values():
         spine.set_edgecolor("#333")
 
-    # Quellen-/DOI-Hinweis zweizeilig direkt unter der Legende. Bewusst erst
-    # jetzt, nachdem set_box_aspect() die endgültige Achsengeometrie festgelegt
-    # hat, damit die gemessene Legendenposition korrekt ist.
-    # Teil der Matplotlib-Figur und damit auch im exportierten PNG.
+    # Two-line source/DOI note directly below the legend. Added only now,
+    # after set_box_aspect() has fixed the final axes geometry, so that the
+    # measured legend position is correct.
+    # Part of the Matplotlib figure and therefore also in the exported PNG.
     if handles:
         _add_source_note(fig, ax, legend, export)
 
@@ -428,11 +428,11 @@ def create_figure(df, L_background, a_min, a_max, b_min, b_max,
 @st.cache_data(show_spinner=False, max_entries=32)
 def render_png(df, L_background, a_min, a_max, b_min, b_max,
                label_size, export, dpi):
-    """Diagramm als PNG-Bytes erzeugen und zwischenspeichern.
+    """Render the figure to PNG bytes and cache the result.
 
-    Solange sich Daten und Einstellungen nicht ändern, liefert Streamlit
-    bei jedem erneuten Durchlauf das gecachte Ergebnis zurück, statt die
-    (teure) Matplotlib-Figur neu zu berechnen. Das verhindert das Ruckeln.
+    As long as the data and settings do not change, Streamlit returns the
+    cached result on every rerun instead of recomputing the (expensive)
+    Matplotlib figure. This is what prevents the UI from stuttering.
     """
     fig = create_figure(
         df,
@@ -468,26 +468,26 @@ st.set_page_config(
 
 st.title("CIELab–sRGB Gamut Plotter")
 st.caption(
-    "Visualisierung von CIELab-Messdaten im a*–b*-Diagramm "
-    "mit dem tatsächlichen sRGB-Gamut."
+    "Visualise CIELab measurement data in the a*–b* diagram "
+    "on top of the true sRGB gamut."
 )
 
-st.markdown(f"**Autor:** {AUTHOR} · {AFFILIATION}")
-st.caption("Empfohlene Zitierung dieser Software:")
+st.markdown(f"**Author:** {AUTHOR} · {AFFILIATION}")
+st.caption("Recommended citation for this software:")
 st.code(CITATION, language="text")
 
 with st.sidebar:
-    st.header("Darstellung")
+    st.header("Display")
 
     L_background = st.slider(
-        "L* Hintergrund",
+        "L* background",
         min_value=1,
         max_value=99,
         value=80,
-        help="Helligkeit L* der dargestellten sRGB-Gamut-Ebene.",
+        help="Lightness L* of the displayed sRGB gamut plane.",
     )
 
-    st.subheader("a* Bereich")
+    st.subheader("a* range")
     a_min, a_max = st.slider(
         "a* min / max",
         min_value=-128,
@@ -496,7 +496,7 @@ with st.sidebar:
         step=1,
     )
 
-    st.subheader("b* Bereich")
+    st.subheader("b* range")
     b_min, b_max = st.slider(
         "b* min / max",
         min_value=-128,
@@ -506,7 +506,7 @@ with st.sidebar:
     )
 
     label_size = st.slider(
-        "Phasenbezeichnung",
+        "Phase label size",
         min_value=5,
         max_value=24,
         value=9,
@@ -514,8 +514,8 @@ with st.sidebar:
 
     st.divider()
     st.markdown(
-        f"**Quelle des Programms**  \n"
-        f"[CIELab Plotter auf GitHub]({APP_GITHUB})  \n"
+        f"**Program source**  \n"
+        f"[CIELab Plotter on GitHub]({APP_GITHUB})  \n"
         f"DOI: [10.5281/zenodo.22811675]"
         f"(https://doi.org/{APP_DOI})"
     )
@@ -525,13 +525,13 @@ if "data" not in st.session_state:
     st.session_state.data = demo_dataframe()
 
 # Input section
-st.subheader("1. Messdaten eingeben")
+st.subheader("1. Enter measurement data")
 
 left, right = st.columns([1.4, 1])
 
 with left:
     pasted = st.text_area(
-        "Daten aus Excel / LibreOffice / Textdatei einfügen",
+        "Paste data from Excel / LibreOffice / a text file",
         height=180,
         placeholder=(
             "Composition\\tPhase\\tL*\\ta*\\tb*\\n"
@@ -539,38 +539,38 @@ with left:
             "Ag 99.99\\tAg\\t92.65\\t-0.31\\t5.05"
         ),
         help=(
-            "Erlaubt sind Tabulator, Semikolon oder Komma als Trennzeichen. "
-            "Die Kopfzeile ist optional."
+            "Tab, semicolon or comma are allowed as separators. "
+            "The header row is optional."
         ),
     )
 
     import_col1, import_col2 = st.columns(2)
 
     with import_col1:
-        if st.button("Daten importieren", type="primary", use_container_width=True):
+        if st.button("Import data", type="primary", use_container_width=True):
             if not pasted.strip():
-                st.warning("Bitte zuerst Daten einfügen.")
+                st.warning("Please paste data first.")
             else:
                 try:
                     new_df, skipped = parse_data(pasted)
                     st.session_state.data = new_df
-                    msg = f"{len(new_df)} Datenpunkt(e) importiert."
+                    msg = f"{len(new_df)} data point(s) imported."
                     if skipped:
-                        msg += f" {skipped} Zeile(n) wurden übersprungen."
+                        msg += f" {skipped} row(s) were skipped."
                     st.success(msg)
                 except ValueError as exc:
                     st.error(str(exc))
 
     with import_col2:
-        if st.button("Beispieldaten laden", use_container_width=True):
+        if st.button("Load example data", use_container_width=True):
             st.session_state.data = demo_dataframe()
-            st.success("Beispieldaten geladen.")
+            st.success("Example data loaded.")
 
 with right:
     uploaded = st.file_uploader(
-        "Oder Datei hochladen",
+        "Or upload a file",
         type=["csv", "tsv", "txt"],
-        help="CSV-, TSV- oder TXT-Datei mit mindestens fünf Spalten.",
+        help="CSV, TSV or TXT file with at least five columns.",
     )
 
     if uploaded is not None:
@@ -582,15 +582,15 @@ with right:
                 new_df, skipped = parse_data(text)
                 st.session_state.data = new_df
                 st.session_state.uploaded_signature = file_signature
-                msg = f"{len(new_df)} Datenpunkt(e) importiert."
+                msg = f"{len(new_df)} data point(s) imported."
                 if skipped:
-                    msg += f" {skipped} Zeile(n) wurden übersprungen."
+                    msg += f" {skipped} row(s) were skipped."
                 st.success(msg)
             except (UnicodeDecodeError, ValueError) as exc:
-                st.error(f"Datei konnte nicht gelesen werden: {exc}")
+                st.error(f"Could not read file: {exc}")
 
 # Data editor
-st.subheader("2. Daten kontrollieren und bearbeiten")
+st.subheader("2. Review and edit data")
 
 edited = st.data_editor(
     st.session_state.data,
@@ -600,7 +600,7 @@ edited = st.data_editor(
     column_config={
         "Composition": st.column_config.TextColumn(
             "Composition",
-            help="Eindeutige Bezeichnung der Zusammensetzung.",
+            help="Unique name of the composition.",
         ),
         "Phase": st.column_config.TextColumn("Phase"),
         "L*": st.column_config.NumberColumn(
@@ -616,12 +616,12 @@ edited = st.data_editor(
             format="%.2f",
         ),
         "Show": st.column_config.CheckboxColumn(
-            "Anzeigen",
-            help="Datenpunkt im Diagramm anzeigen.",
+            "Show",
+            help="Show this data point in the diagram.",
         ),
         "Label": st.column_config.CheckboxColumn(
-            "Phase beschriften",
-            help="Phasenbezeichnung neben dem Datenpunkt anzeigen.",
+            "Label phase",
+            help="Show the phase label next to the data point.",
         ),
     },
     key="data_editor",
@@ -636,9 +636,9 @@ except ValueError as exc:
 
 # Plot
 if edited is not None and not edited.empty:
-    st.subheader("3. Diagramm")
+    st.subheader("3. Diagram")
 
-    # Anzeige-Diagramm (gecacht -> kein Neuberechnen bei jeder Interaktion).
+    # Display figure (cached -> not recomputed on every interaction).
     display_png = render_png(
         edited,
         L_background,
@@ -652,7 +652,7 @@ if edited is not None and not edited.empty:
     )
     st.image(display_png)
 
-    # Export-Diagramm in Publikationsqualität (ebenfalls gecacht).
+    # Export figure at publication quality (also cached).
     export_png = render_png(
         edited,
         L_background,
@@ -666,7 +666,7 @@ if edited is not None and not edited.empty:
     )
 
     st.download_button(
-        label="PNG herunterladen",
+        label="Download PNG",
         data=export_png,
         file_name=f"cielab_L{int(L_background)}.png",
         mime="image/png",
@@ -674,4 +674,4 @@ if edited is not None and not edited.empty:
     )
 
 else:
-    st.info("Bitte mindestens einen gültigen Datenpunkt eingeben.")
+    st.info("Please enter at least one valid data point.")
