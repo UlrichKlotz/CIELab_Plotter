@@ -21,7 +21,7 @@ APP_DOI = "10.5281/zenodo.22811675"
 APP_GITHUB = "https://github.com/UlrichKlotz/CIELab_Plotter"
 
 # --- Author / citation ----------------------------------------------------
-AUTHOR = "Prof. Dr. Ulrich E. Klotz"
+AUTHOR = "Ulrich E. Klotz"
 AFFILIATION = "Hochschule München University of Applied Sciences"
 APP_YEAR = 2026
 APP_TITLE_FULL = "CIELab–sRGB Gamut Plotter"
